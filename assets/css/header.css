@@ -7,6 +7,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 99999;
 }
 
 header .row {
@@ -53,4 +54,123 @@ header .row {
 
 .navbar ul li a.active {
     color: var(--white-color);
+}
+
+.mobile-navbar {
+    display: none;
+}
+
+.mobile-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    background: linear-gradient(126deg, #C115B5 0%, #7508A6 100%);
+    padding: 30px;
+    height: 100vh;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+.menu-bar ion-icon.md.hydrated {
+    font-size: 30px;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: linear-gradient(126deg, #C115B5 0%, #7508A6 100%);
+    color: var(--white-color);
+}
+
+.close ion-icon.md.hydrated {
+    font-size: 30px;
+    border: 1px solid;
+    padding: 3px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.mobile-nav img {
+    width: 180px;
+}
+
+.mobile-nav .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mobile-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+.mobile-nav ul li {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+}
+
+.mobile-nav ul li a {
+    color: var(--white-color);
+    width: 100%;
+    border: 1px solid;
+    padding: 10px;
+}
+
+@media(max-width: 1440px) {
+    header {
+        padding: 10px 20px;
+    }
+}
+
+@media(max-width: 900px) {
+    header {
+        padding: 10px;
+    }
+
+    header .row {
+        padding: 15px 10px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .mobile-navbar {
+        display: block;
+    }
+}
+
+@media(max-width: 768px) {
+    .mobile-nav {
+        width: 70%;
+    }
+
+    header .row {
+        padding: 15px 20px;
+    }
+
+    .site-logo {
+        margin-left: 0px;
+    }
+}
+
+@media(max-width: 500px) {
+    .mobile-nav {
+        width: 100%;
+        padding: 20px;
+    }
+
 }
