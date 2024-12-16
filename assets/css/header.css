@@ -16,13 +16,17 @@ header .row {
     align-items: center;
     width: 1600px;
     background: var(--theme-color);
-    border: 1px solid #c115b64d;
+    border: 1px solid #c115b679;
     border-radius: 50px;
     padding: 10px;
 }
 
 .site-logo {
     margin-left: 20px;
+}
+
+.site-logo h2 {
+    font-size: 24px;
 }
 
 .navbar {
