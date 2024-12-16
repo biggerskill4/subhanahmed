@@ -103,7 +103,9 @@ header .row {
 .mobile-nav img {
     width: 180px;
 }
-
+.mobile-nav h2 {
+    font-size: 24px;
+}
 .mobile-nav .profile {
     display: flex;
     justify-content: center;

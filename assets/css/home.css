@@ -422,6 +422,7 @@ section.hero {
     position: relative;
     z-index: 0;
     animation: bg-move-left 15s linear infinite;
+    padding: 80px 10px;
 }
 
 @keyframes bg-move-left {
