@@ -366,6 +366,9 @@ section.hero {
     .about-content p {
         font-size: 18px;
     }
+    .about {
+        height: auto;
+    }
 }
 
 @media(max-width: 500px) {
@@ -402,5 +405,116 @@ section.hero {
     }
     .skill {
         gap: 0;
+    }
+}
+
+/* Projects */
+.projects {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../../Images/bg-gradient.png);
+    background-position: bottom left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    animation: bg-move-left 15s linear infinite;
+}
+
+@keyframes bg-move-left {
+    0% {
+        background-position: bottom left;
+    }
+
+    50% {
+        background-position: bottom center;
+    }
+
+    100% {
+        background-position: bottom left;
+    }
+}
+
+.projects::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--theme-color);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.projects .row {
+    width: 1440px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.prj {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    margin: 0px 10px;
+}
+
+.site{
+    position: relative;
+}
+.site img {
+    width: 100%;
+}
+
+.site h4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(126deg, #790a715e 0%, #4c056d59 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    transition: 0.3s;
+    text-shadow: 1px 1px 8px #0B0B0B;
+}
+.site:hover {
+    cursor: pointer;
+}
+.site:hover h4 {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media(max-width: 900px) {
+    .projects {
+        height: auto;
+    }
+
+    .projects h2 {
+        font-size: 40px;
+    }
+    .prj {
+        grid-template-columns: auto auto;
+
+    }
+}
+
+@media(max-width: 500px) {
+    .prj {
+        grid-template-columns: auto;
+
+    }
+    .projects .row {
+        gap: 20px;
     }
 }

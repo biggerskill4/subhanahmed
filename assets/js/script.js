@@ -17,3 +17,23 @@ document.addEventListener('click', (event) => {
         mobileMenu.style.transform = 'translateX(-100%)';
     }
 });
+
+
+// Ensure Lenis script is loaded before executing
+window.addEventListener('DOMContentLoaded', () => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 1.5,          // Smooth scroll duration
+      easing: (t) => t,       // Linear easing (default)
+      smooth: true,           // Enable smooth scrolling
+      direction: 'vertical',  // Vertical scrolling
+      smoothTouch: true,      // Enable smooth touch scrolling
+    });
+
+    // Animation frame loop to update Lenis
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  });
