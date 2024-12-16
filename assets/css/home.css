@@ -344,7 +344,18 @@ section.hero {
     background: var(--secondary-color);
     border-radius: 50%;
 }
-
+.css span:nth-child(n+8) {
+    background: #470566;
+}
+.js span:nth-child(n+5) {
+    background: #470566;
+}
+.wordpress span:nth-child(n+9) {
+    background: #470566;
+}
+.shopify span:nth-child(n+8) {
+    background: #470566;
+}
 
 @media(max-width: 900px) {
     .about .row {
@@ -386,7 +397,8 @@ section.hero {
         font-size: 14px;
     }
     .skill h4 {
-        width: 130px;
+        width: auto;
+        flex: 1;
     }
     .skill {
         gap: 0;
