@@ -19,21 +19,88 @@ document.addEventListener('click', (event) => {
 });
 
 
-// Ensure Lenis script is loaded before executing
-window.addEventListener('DOMContentLoaded', () => {
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 1.5,          // Smooth scroll duration
-      easing: (t) => t,       // Linear easing (default)
-      smooth: true,           // Enable smooth scrolling
-      direction: 'vertical',  // Vertical scrolling
-      smoothTouch: true,      // Enable smooth touch scrolling
-    });
 
-    // Animation frame loop to update Lenis
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+// GSAP and ScrollTrigger
+gsap.from("header .row", {
+  y: -180, 
+  duration: 1,
+});
+
+
+gsap.from(".left-animation", {
+  x: "-100%",
+  duration: 1,
+  ease: "power2",
+  scrollTrigger: {
+    trigger: ".left-animation",       
+    start: "top bottom",          
+    end: "top top",                  
+    toggleActions: "play reverse restart none", 
+  }
+});
+
+gsap.from(".right-animation", {
+  x: "100%",
+  duration: 1,
+  ease: "power2",
+  scrollTrigger: {
+    trigger: ".left-animation",       
+    start: "top bottom",          
+    end: "top top",                  
+    toggleActions: "play reverse restart none", 
+  }
+});
+
+gsap.from(".left-scroll-animation", {
+  opacity: 0,
+  x: "-100%",
+  duration: 1,
+  ease: "power2",
+  scrollTrigger: {
+    trigger: ".left-scroll-animation",
+    start: 'top 90%',
+    end: 'bottom top',
+    toggleActions: "play none restart reverse"
+  }
+});
+
+gsap.from(".right-scroll-animation", {
+  opacity: 0,
+  x: "100%",
+  duration: 1,
+  ease: "power2",
+  scrollTrigger: {
+    trigger: ".right-scroll-animation",
+    start: 'top 90%',
+    end: 'bottom top',
+    toggleActions: "play none restart reverse"
+  }
+});
+
+gsap.from(".top-scroll-animation", {
+  opacity: 0,
+  y: 500,
+  duration: 1,
+  ease: "power2",
+  scrollTrigger: {
+    trigger: ".top-scroll-animation",
+    start: 'top bottom',
+    end: 'bottom top',
+    toggleActions: "play none restart reverse"
+  }
+});
+
+
+
+const clickMe = document.querySelector('.navbar .cta-btn');
+const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+clickMe.addEventListener('click', () => {
+  headings.forEach(heading => {
+    if (heading.style.fontFamily === "MonumentExtended") {
+      heading.style.fontFamily = "";
+    } else {
+      heading.style.fontFamily = "MonumentExtended  ";
     }
-    requestAnimationFrame(raf);
   });
+});

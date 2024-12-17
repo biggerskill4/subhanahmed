@@ -23,6 +23,11 @@
     --white-color: #FFFFFF ;
 }
 
+@font-face {
+    font-family: MonumentExtended;
+    src: url(../fonts/MonumentExtended-FreeForPersonalUse/MonumentExtended-Ultrabold.otf);
+}
+
 ::selection {
     color: var(--primary-color);
     background: var(--secondary-color)
@@ -31,6 +36,9 @@
 body {
     background: var(--theme-color);
     color: var(--text-color);
+}
+html {
+    overflow-x: hidden;
 }
 
 /* width */
@@ -55,7 +63,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Ubuntu", sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     color: var(--white-color);
 }
 
